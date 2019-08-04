@@ -17,6 +17,7 @@ import java.util.List;
 
 public class CRMPage {
 
+
     public CRMPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
@@ -76,24 +77,12 @@ public class CRMPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void selectAction(String actionName) {
         String optionLocator = "//a[contains(@data-section,'other') and contains(text(),'" + actionName + "')]";
         BriteUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath(optionLocator)), 5);
         Driver.getDriver().findElement(By.xpath(optionLocator)).click();
     }
+
 
     public void verifyThatOpportunityDeleted(String opportunity) {
         String locator = "//td[text()='" + opportunity + "']";
